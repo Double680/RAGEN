@@ -59,7 +59,7 @@ class Retriever:
                 if i == len(indices):
                     break
                 idcg += 1 / math.log2(i + 2)
-            ndcg = dcg / idcg
+            ndcg = dcg / idcg if idcg != 0 else -1  # do not perform retrieval
 
         return precision, recall, ndcg
     
