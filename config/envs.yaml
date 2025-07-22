@@ -1,4 +1,11 @@
 custom_envs:
+  HybTQA:
+    env_type: hybtqa
+    max_actions_per_traj: 8
+    env_instruction: "You need to answer a question after [Q] tag. For each turn you must choose exactly one of two actions: retrieve, answer: 1. When there are no enough evidence, generate the content to be retrieved after '[R]' tag. 2. When you think that the retrieved information is enough for figuring out the final answer to the question, generate the final answer after '[A]' tag, and the overall reasoning will stop. The generation format should be either `[R] XXX` or `[A] XXX`, and XXX stands for the content."
+    max_tokens: 512
+    env_config: null
+
   SimpleSokoban:
     env_type: sokoban
     max_actions_per_traj: 10 # used in environment state manager to control the actual max actions executed per trajectory

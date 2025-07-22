@@ -151,6 +151,8 @@ class ContextManager:
         if not match:
             # think_content, action_content, actions = "", "", [] # do not remove this kind of invalid string
             llm_response, actions = response, []
+            action = llm_response.split("</think>")[-1].split('<answer>')[-1].split('</answer>')[0]
+            actions.append(action)
         else:
             if self.config.agent_proxy.enable_think:
                 think_content, action_content = match.group(1), match.group(2)
