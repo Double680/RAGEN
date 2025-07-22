@@ -28,7 +28,7 @@ agent_proxy:
 es_manager:
   train:
     env_groups: 16
-    group_size: 8
+    group_size: 16
     env_configs:
       tags: ["HybTQA"]
       n_groups: [16]
